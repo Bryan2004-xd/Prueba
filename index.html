@@ -319,30 +319,7 @@
     <footer class="text-center p-3 bg-light mt-5">
       <p>© 2025 El Buen Libro | Contacto: +505 8972-9266 | elbuenlibro@gmail.com</p>
     </footer>
-      <!-- SCRIPT -->
-    <script>
-      async function analizarSentimiento() {
-        const texto = document.getElementById("texto").value;
-        try {
-          const response = await fetch("https://a6flrsn1g4.execute-api.us-east-1.amazonaws.com/prod/analizar", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text: texto })
-          });
-
-          if (!response.ok) throw new Error("Error en la API: " + response.status);
-
-          const resultado = await response.json();
-          console.log("Resultado del análisis:", resultado);
-
-          document.getElementById("resultado").innerText = resultado.sentimiento || JSON.stringify(resultado);
-
-        } catch (error) {
-          console.error("Error al llamar a la API:", error);
-          document.getElementById("resultado").innerText = "Error al analizar el texto.";
-        }
-      }
-    </script>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     
